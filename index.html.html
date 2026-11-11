@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Информационный сайт о теневой занятости несовершеннолетних, трудовых правах подростков и безопасном трудоустройстве.">
+<title>Твой труд — твои права | Теневая занятость подростков</title>
+<style>
+:root{
+ --ink:#17243b;--muted:#64748b;--paper:#f5f7fb;--white:#fff;--blue:#2855d9;
+ --blue2:#4778f5;--mint:#dff7ef;--mint-ink:#11634e;--yellow:#fff2c7;
+ --yellow-ink:#805b00;--red:#ffe4e5;--red-ink:#a52b35;--line:#e4eaf2;
+ --shadow:0 18px 50px rgba(24,42,76,.09);--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.65}
+a{color:inherit}
+button{font:inherit}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(228,234,242,.9)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.03em}
+.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--blue),#6d8fff);display:grid;place-items:center;color:white;font-size:21px;box-shadow:0 8px 20px #2855d933}
+.navlinks{display:flex;align-items:center;gap:22px}
+.navlinks a{text-decoration:none;color:#506079;font-size:14px;font-weight:650}
+.navlinks a:hover{color:var(--blue)}
+.menu{display:none;border:1px solid var(--line);background:white;border-radius:12px;padding:8px 12px;color:var(--ink)}
+.hero{padding:74px 0 58px;background:radial-gradient(circle at 82% 16%,#dfe8ff 0,transparent 28%),linear-gradient(135deg,#f7f9ff 0%,#edf3ff 52%,#effaf7 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:99px;background:#e4ebff;color:#2449bd;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+h1{font-size:clamp(38px,5.5vw,66px);line-height:1.04;letter-spacing:-.055em;margin:20px 0 18px;max-width:720px}
+.gradient{background:linear-gradient(90deg,#2855d9,#19a783);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:#53627a;max-width:650px;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:14px;text-decoration:none;font-weight:750;border:1px solid transparent;transition:.2s}
+.btn.primary{background:var(--blue);color:white;box-shadow:0 10px 22px #2855d933}
+.btn.primary:hover{transform:translateY(-2px);background:#1f45bd}
+.btn.secondary{background:white;border-color:var(--line);color:var(--ink)}
+.btn.secondary:hover{border-color:#b8c8f8}
+.hero-card{background:white;border:1px solid #e7ecf5;border-radius:28px;padding:25px;box-shadow:var(--shadow);position:relative}
+.hero-card:before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:#e5f8f1;right:-24px;top:-28px;z-index:0}
+.hero-card>*{position:relative}
+.card-label{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.big-stat{font-size:40px;font-weight:900;letter-spacing:-.05em;margin:8px 0 0}
+.hero-card p{color:var(--muted);margin:4px 0 20px}
+.mini-list{display:grid;gap:11px}
+.mini{display:flex;gap:11px;align-items:center;padding:11px 12px;background:#f7f9fc;border-radius:14px;font-size:14px;font-weight:650}
+.dot{width:29px;height:29px;display:grid;place-items:center;border-radius:10px;background:var(--mint);color:var(--mint-ink);flex:none}
+section{padding:70px 0}
+.section-head{max-width:720px;margin-bottom:30px}
+.kicker{font-size:12px;color:var(--blue);font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.04em;line-height:1.15;margin:9px 0 12px}
+.section-head p{color:var(--muted);margin:0;font-size:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:0 7px 24px rgba(24,42,76,.035)}
+.iconbox{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:#edf2ff;font-size:21px;margin-bottom:15px}
+.card h3{font-size:18px;line-height:1.3;margin:0 0 8px;letter-spacing:-.02em}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.callout{padding:19px 21px;border-radius:17px;background:#eef3ff;border:1px solid #dce6ff;color:#344a80;margin-top:22px}
+.callout strong{color:#1d3eaa}
+.warning{background:var(--yellow);border:1px solid #f5e4a9;color:var(--yellow-ink);padding:18px 20px;border-radius:17px}
+.rights{background:#fff}
+.rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.right-item{display:flex;gap:14px;padding:18px;background:#f8fafc;border:1px solid var(--line);border-radius:17px}
+.check{flex:none;width:30px;height:30px;border-radius:10px;background:var(--mint);color:var(--mint-ink);display:grid;place-items:center;font-weight:900}
+.right-item b{display:block;margin-bottom:3px}
+.right-item span{font-size:14px;color:var(--muted)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:white}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line);font-size:14px}
+th{background:#f5f7fc;color:#52617a;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:750}
+.risks{background:#fff9f9}
+.risk-card{border-top:4px solid #e47b82}
+.risk-card .iconbox{background:var(--red)}
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.step{counter-increment:step;display:flex;gap:15px;background:white;border:1px solid var(--line);padding:18px;border-radius:17px}
+.step:before{content:counter(step,decimal-leading-zero);font-weight:900;color:var(--blue);font-size:17px;background:#edf2ff;border-radius:12px;padding:7px 9px;height:max-content}
+.step b{display:block;margin-bottom:4px}
+.step p{margin:0;color:var(--muted);font-size:14px}
+.dont{background:#fff;border:1px solid #f3d7d9;border-radius:20px;padding:22px}
+.dont h3{margin:0 0 12px;color:var(--red-ink)}
+.dont ul{margin:0;padding-left:20px;color:#67434a}
+.dont li{margin:7px 0}
+.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contact{background:#fff;border:1px solid var(--line);padding:20px;border-radius:18px}
+.contact a{color:var(--blue);font-weight:750;text-decoration:none;overflow-wrap:anywhere}
+.contact p{font-size:14px;color:var(--muted);margin:7px 0 0}
+.faq details{background:white;border:1px solid var(--line);border-radius:15px;padding:16px 18px;margin:10px 0}
+.faq summary{cursor:pointer;font-weight:750}
+.faq details p{color:var(--muted);font-size:14px;margin:12px 0 0}
+footer{background:#15233d;color:#dce5f7;padding:34px 0}
+footer p{margin:5px 0;color:#aebbd2;font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:25px;align-items:center}
+.top{position:fixed;bottom:20px;right:20px;width:45px;height:45px;border:0;border-radius:15px;background:var(--blue);color:white;font-size:20px;box-shadow:0 8px 20px #2855d944;cursor:pointer;display:none}
+.small{font-size:12px;color:var(--muted)}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-card{max-width:520px}.grid3{grid-template-columns:1fr 1fr}.contacts{grid-template-columns:1fr 1fr}.navlinks{gap:12px}.navlinks a{font-size:12px}}
+@media(max-width:620px){.wrap{width:min(100% - 28px,1120px)}.nav{height:64px}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;background:white;padding:15px 22px 20px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.navlinks a{font-size:15px}.menu{display:block}.hero{padding:48px 0 42px}.lead{font-size:16px}.grid3,.grid2,.rights-grid,.steps,.contacts{grid-template-columns:1fr}section{padding:52px 0}.foot{display:block}.foot div+div{margin-top:16px}}
+@media print{header,.actions,.top{display:none!important}body{background:white}.hero{padding:25px 0}.card,.step,.contact{break-inside:avoid;box-shadow:none}section{padding:25px 0}}
+
+/* Обновлённое оформление: спокойная бирюзово-графитовая палитра и новая типографика */
+:root{
+ --ink:#20343a;--muted:#64777a;--paper:#f4f6f2;--white:#ffffff;--blue:#176b68;
+ --blue2:#2b8b83;--mint:#dff1e9;--mint-ink:#17634f;--yellow:#fff1d6;
+ --yellow-ink:#80551b;--red:#fbe7e3;--red-ink:#9b453d;--line:#dce6e1;
+ --shadow:0 18px 50px rgba(28,58,55,.09);--radius:22px;
+}
+body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--paper);color:var(--ink);letter-spacing:.005em}
+h1,h2,h3,.brand,.big-stat{font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif}
+h1,h2{letter-spacing:-.035em}
+header{background:rgba(250,252,249,.94);border-bottom-color:#dce6e1}
+.navlinks a{color:#536b6b}.navlinks a:hover{color:#176b68}
+.logo{background:linear-gradient(135deg,#155b5a,#35a39a);box-shadow:0 8px 20px rgba(23,107,104,.2)}
+.menu{border-color:var(--line);background:#fff;color:var(--ink)}
+.hero{background:radial-gradient(circle at 82% 16%,#d9eee7 0,transparent 29%),linear-gradient(135deg,#f8faf6 0%,#eaf3ee 55%,#e5f2ef 100%)}
+.eyebrow{background:#dcefe8;color:#175f59}
+.gradient{background:linear-gradient(90deg,#155e63,#31958a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:#566d6e}
+.btn.primary{background:#176b68;box-shadow:0 10px 22px rgba(23,107,104,.2)}
+.btn.primary:hover{background:#105653}
+.btn.secondary{border-color:#dce6e1;color:var(--ink)}
+.btn.secondary:hover{border-color:#9cc9bd}
+.hero-card{border-color:#dce9e2}
+.hero-card:before{background:#e0f2e9}
+.mini{background:#f2f7f3}
+.dot,.check{background:#dff1e9;color:#17634f}
+.kicker{color:#176b68}
+.card{border-color:var(--line);box-shadow:0 7px 24px rgba(28,58,55,.035)}
+.iconbox{background:#e5f1ed}
+.callout{background:#e8f2ed;border-color:#d3e5dc;color:#385c58}
+.callout strong{color:#155e59}
+.warning{background:#fff1d6;border-color:#f0dfbd;color:#80551b}
+.rights{background:#fff}
+.right-item{background:#f7faf7;border-color:var(--line)}
+th{background:#edf4f0;color:#526967}
+.risks{background:#fbf1ef}
+.risk-card{border-top-color:#d98275}
+.risk-card .iconbox{background:#fbe7e3}
+.step{border-color:var(--line)}
+.step:before{color:#176b68;background:#e3f0eb}
+.dont{border-color:#efd8d3}
+.dont h3{color:#9b453d}
+.dont ul{color:#70514d}
+.contacts .contact{border-color:var(--line)}
+.contact a{color:#176b68}
+.faq details{border-color:var(--line)}
+footer{background:#183b3c;color:#e2efea}
+footer p{color:#b9d0c8}
+.top{background:#176b68;box-shadow:0 8px 20px rgba(23,107,104,.24)}
+.small{color:var(--muted)}
+/* Убираем старые оттенки из встроенных карточек */
+.dont h3{color:#9b453d!important}
+.card[style*="background:#f0fbf7"]{background:#edf6f0!important;border-color:#d7e9df!important}
+.card[style*="background:#f0fbf7"] h3{color:#17634f!important}
+@media(max-width:620px){.navlinks{background:#fbfdfb;border-bottom-color:var(--line)}}
+
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home"><span class="logo">§</span><span>ТВОЙ ТРУД — ТВОИ ПРАВА</span></a>
+  <nav class="navlinks" id="navlinks">
+   <a href="#about">О проблеме</a><a href="#rights">Твои права</a><a href="#risks">Риски</a><a href="#memo">Памятка</a><a href="#help">Помощь</a>
+  </nav>
+  <button class="menu" id="menuBtn" aria-label="Открыть меню">☰ Меню</button>
+ </div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <span class="eyebrow">Правовая грамотность • 14–17 лет</span>
+   <h1>Первая работа должна быть <span class="gradient">безопасной</span></h1>
+   <p class="lead">Разбираемся, что такое теневая занятость, как подростку устроиться официально и что делать, если работодатель нарушает права.</p>
+   <div class="actions"><a class="btn primary" href="#memo">Открыть памятку <span>→</span></a><a class="btn secondary" href="#rights">Узнать свои права</a></div>
+  </div>
+  <aside class="hero-card">
+   <div class="card-label">Главное правило</div>
+   <div class="big-stat">Сначала договор</div>
+   <p>Не начинай работу, пока не понял условия и не разобрался, как оформлены отношения.</p>
+   <div class="mini-list">
+    <div class="mini"><span class="dot">✓</span> Уточни, кто твой работодатель</div>
+    <div class="mini"><span class="dot">✓</span> Проверь оплату и график</div>
+    <div class="mini"><span class="dot">✓</span> Получи свой экземпляр договора</div>
+   </div>
+  </aside>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">01 / Разберёмся</div><h2>Что такое теневая занятость?</h2><p>Это работа, которая полностью или частично скрывается от официального учёта и оформляется с нарушением установленных правил.</p></div>
+  <div class="grid3">
+   <article class="card"><div class="iconbox">📝</div><h3>Нет трудового договора</h3><p>Подросток приступает к работе, но письменный трудовой договор с ним не заключают, хотя фактически он выполняет работу в интересах работодателя.</p></article>
+   <article class="card"><div class="iconbox">💬</div><h3>Только устные обещания</h3><p>Работодатель обещает заплатить «потом», не фиксирует обязанности, график и размер оплаты.</p></article>
+   <article class="card"><div class="iconbox">🕶️</div><h3>Скрытая оплата</h3><p>Часть заработка или сама работа могут скрываться, а условия труда — не соответствовать требованиям закона.</p></article>
+  </div>
+  <div class="callout"><strong>Важно:</strong> не всякая подработка без стандартного трудового договора автоматически является трудовыми отношениями. Например, гражданско-правовой договор регулируется иначе. Но название документа не решает вопрос: если фактически есть признаки трудовых отношений, их могут признать трудовыми.</div>
+ </div>
+</section>
+
+<section class="rights" id="rights">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">02 / Закон на твоей стороне</div><h2>Основные трудовые права подростков</h2><p>В России особенности труда несовершеннолетних регулируются Трудовым кодексом РФ. Ниже — основные правила, которые важно знать перед устройством на работу.</p></div>
+  <div class="rights-grid">
+   <div class="right-item"><span class="check">✓</span><div><b>Официальное оформление</b><span>Трудовой договор заключается письменно. Один экземпляр должен быть передан работнику.</span></div></div>
+   <div class="right-item"><span class="check">✓</span><div><b>Медицинский осмотр</b><span>Несовершеннолетние проходят обязательный предварительный медосмотр за счёт работодателя; до 18 лет осмотр проводится ежегодно.</span></div></div>
+   <div class="right-item"><span class="check">✓</span><div><b>Безопасные условия</b><span>Запрещены вредные и опасные работы, подземные работы и деятельность, способная причинить вред здоровью или нравственному развитию.</span></div></div>
+   <div class="right-item"><span class="check">✓</span><div><b>Отпуск</b><span>Ежегодный основной оплачиваемый отпуск несовершеннолетнего — 31 календарный день в удобное для него время.</span></div></div>
+  </div>
+  <h3 style="margin:30px 0 13px">Возраст и условия заключения договора</h3>
+  <div class="table-wrap">
+   <table>
+    <thead><tr><th>Возраст</th><th>Общее правило</th></tr></thead>
+    <tbody>
+     <tr><td>С 16 лет</td><td>Можно заключить трудовой договор самостоятельно с соблюдением требований закона.</td></tr>
+     <tr><td>С 15 лет</td><td>В предусмотренных законом случаях — для лёгкого труда, не причиняющего вреда здоровью и без ущерба для освоения образовательной программы.</td></tr>
+     <tr><td>С 14 лет</td><td>С письменного согласия одного из родителей (попечителя) и с соблюдением специальных условий; для учащихся — работа в свободное от учёбы время и только лёгкий труд.</td></tr>
+     <tr><td>До 14 лет</td><td>Допускается только в отдельных творческих сферах (например, кино, театр) при соблюдении специальных требований и с согласиями, предусмотренными законом.</td></tr>
+    </tbody>
+   </table>
+  </div>
+  <h3 style="margin:30px 0 13px">Сколько можно работать?</h3>
+  <div class="table-wrap">
+   <table>
+    <thead><tr><th>Возраст</th><th>В неделю</th><th>В день / смену</th></tr></thead>
+    <tbody>
+     <tr><td>До 16 лет</td><td>Не более 24 часов</td><td>До 4 часов в возрасте 14–15 лет; до 5 часов в возрасте 15–16 лет</td></tr>
+     <tr><td>16–18 лет</td><td>Не более 35 часов</td><td>До 7 часов</td></tr>
+    </tbody>
+   </table>
+  </div>
+  <p class="small">Если подросток в течение учебного года совмещает работу с получением общего или среднего профессионального образования, продолжительность ежедневной работы (смены) не должна превышать половины указанных выше норм. Точные правила установлены статьями 92 и 94 ТК РФ.</p>
+  <div class="warning" style="margin-top:18px"><strong>Запомни:</strong> несовершеннолетних, как правило, нельзя привлекать к ночной и сверхурочной работе, работе в выходные и праздничные дни. Закон предусматривает отдельные исключения для некоторых творческих работников и иных специально указанных случаев.</div>
+ </div>
+</section>
+
+<section class="risks" id="risks">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">03 / Обрати внимание</div><h2>Чем опасна неофициальная работа?</h2><p>Когда условия не зафиксированы, подростку труднее доказать договорённости и защитить свои интересы.</p></div>
+  <div class="grid3">
+   <article class="card risk-card"><div class="iconbox">💸</div><h3>Могут не заплатить</h3><p>Работодатель может задержать оплату, уменьшить её или вовсе отказаться платить за выполненную работу.</p></article>
+   <article class="card risk-card"><div class="iconbox">⏰</div><h3>Слишком долгий график</h3><p>Могут требовать работать дольше разрешённого времени, поздно вечером или без нормального отдыха.</p></article>
+   <article class="card risk-card"><div class="iconbox">⚠️</div><h3>Опасные задания</h3><p>Подростку могут поручить тяжёлую или опасную работу, запрещённую для несовершеннолетних.</p></article>
+   <article class="card risk-card"><div class="iconbox">📄</div><h3>Сложнее доказать работу</h3><p>Без документов и сохранённых подтверждений труднее установить, где, когда и на каких условиях выполнялась работа.</p></article>
+   <article class="card risk-card"><div class="iconbox">🎓</div><h3>Проблемы с учёбой</h3><p>Чрезмерная занятость может мешать занятиям, подготовке к экзаменам и полноценному отдыху.</p></article>
+   <article class="card risk-card"><div class="iconbox">🛡️</div><h3>Меньше гарантий</h3><p>Неоформленная работа часто означает, что подросток не получает положенные трудовые гарантии и защиту.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="memo">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">04 / Практическая памятка</div><h2>Как не попасться на сомнительное предложение</h2><p>Проверь эти пункты до того, как соглашаться на работу. Если что-то настораживает — остановись и посоветуйся со взрослым, которому доверяешь.</p></div>
+  <div class="steps">
+   <div class="step"><div><b>Узнай, кто предлагает работу</b><p>Попроси полное название организации или ФИО работодателя, адрес и контакты. Не соглашайся на встречу в сомнительном или изолированном месте.</p></div></div>
+   <div class="step"><div><b>Уточни обязанности и оплату</b><p>Спроси, что именно нужно делать, сколько и когда заплатят, какой будет график и кто отвечает за безопасность.</p></div></div>
+   <div class="step"><div><b>Попроси оформить отношения</b><p>До начала работы обсуди письменный трудовой договор. Внимательно прочитай его и забери свой экземпляр.</p></div></div>
+   <div class="step"><div><b>Проверь возрастные ограничения</b><p>Убедись, что работа разрешена для твоего возраста, не мешает учёбе и не относится к запрещённым или опасным видам деятельности.</p></div></div>
+   <div class="step"><div><b>Не отдавай документы и деньги</b><p>Не передавай паспорт посторонним и не плати за «оформление вакансии», доступ к работе или обязательное обучение без проверки законности такого требования.</p></div></div>
+   <div class="step"><div><b>Сохраняй подтверждения</b><p>Храни договор, переписку, сведения о графике и выплатах. Не подписывай пустые или непонятные документы.</p></div></div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+   <div class="dont"><h3>🚩 Признаки сомнительной вакансии</h3><ul><li>Обещают очень высокую оплату без понятных обязанностей.</li><li>Не называют работодателя и адрес работы.</li><li>Говорят: «Сначала поработай бесплатно, потом оформим».</li><li>Отказываются обсуждать договор и условия письменно.</li><li>Требуют оплатить трудоустройство или прислать данные банковской карты, коды из СМС.</li></ul></div>
+   <div class="card" style="background:#f0fbf7;border-color:#d8f0e6"><h3 style="color:#11634e">Если уже работаешь без оформления</h3><p style="margin-bottom:10px">Не паникуй. Собери подтверждения фактической работы: переписку, график, задания, сведения о выплатах и контакты свидетелей. Обсуди ситуацию с родителем или другим доверенным взрослым и обратись за консультацией в Государственную инспекцию труда.</p><p class="small">Не нужно самостоятельно вступать в конфликт с работодателем, если чувствуешь себя небезопасно.</p></div>
+  </div>
+  <div class="actions" style="margin-top:22px"><button class="btn primary" onclick="window.print()">Распечатать памятку ↗</button><a class="btn secondary" href="#help">Куда обратиться за помощью</a></div>
+ </div>
+</section>
+
+<section id="help" class="rights">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">05 / Не оставайся один</div><h2>Куда обратиться за помощью?</h2><p>Если работодатель нарушает твои права, попроси помощи у родителя или законного представителя. Также можно обратиться в государственные органы.</p></div>
+  <div class="contacts">
+   <div class="contact"><div class="iconbox">🏛️</div><h3>Государственная инспекция труда</h3><p>Принимает обращения по вопросам нарушения трудового законодательства.</p><a href="https://онлайнинспекция.рф/" target="_blank" rel="noopener">Онлайнинспекция.рф ↗</a></div>
+   <div class="contact"><div class="iconbox">⚖️</div><h3>Прокуратура Ярославской области</h3><p>Можно сообщить о нарушении закона и попросить провести проверку в пределах полномочий прокуратуры.</p><a href="https://epp.genproc.gov.ru/web/proc_76" target="_blank" rel="noopener">Официальный сайт ↗</a></div>
+   <div class="contact"><div class="iconbox">📚</div><h3>Трудовой кодекс РФ</h3><p>Основные нормы о труде несовершеннолетних содержатся в статьях 63, 92, 94, 265–271 ТК РФ.</p><a href="https://www.consultant.ru/document/cons_doc_LAW_34683/" target="_blank" rel="noopener">Открыть ТК РФ ↗</a></div>
+  </div>
+  <div class="callout"><strong>Если есть непосредственная угроза безопасности:</strong> уйди в безопасное место и обратись к взрослому, которому доверяешь. При экстренной опасности звони 112.</div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">06 / Коротко о важном</div><h2>Частые вопросы</h2></div>
+  <div class="faq">
+   <details><summary>Можно ли подростку работать летом?</summary><p>Да. Несовершеннолетние могут работать при соблюдении требований к возрасту, характеру работы, продолжительности рабочего времени и оформлению трудовых отношений.</p></details>
+   <details><summary>Если работодатель говорит, что договор не нужен?</summary><p>Не спеши соглашаться. Попроси объяснить правовое основание и обсуди предложение с родителем или законным представителем. При фактических трудовых отношениях письменное оформление обязательно.</p></details>
+   <details><summary>Что делать, если не выплатили зарплату?</summary><p>Сохрани переписку и другие доказательства работы, запиши даты и договорённости, обратись к родителю или законному представителю и за консультацией в Государственную инспекцию труда.</p></details>
+   <details><summary>Может ли работодатель заставить работать ночью?</summary><p>Для несовершеннолетних действует общий запрет на ночную работу, кроме отдельных предусмотренных законом исключений.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap foot">
+  <div><strong>ТВОЙ ТРУД — ТВОИ ПРАВА</strong><p>Информационный проект о теневой занятости несовершеннолетних.</p></div>
+  <div><p>Материал носит информационный характер и не заменяет индивидуальную юридическую консультацию.</p><p>Перед трудоустройством проверяй актуальную редакцию законодательства РФ.</p></div>
+ </div>
+</footer>
+<button class="top" id="topBtn" aria-label="Наверх">↑</button>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{topBtn.style.display=window.scrollY>500?'block':'none'});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
